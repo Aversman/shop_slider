@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.show_content {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product_slider, .test {
+    width: 50%;
+}
+
+.test {
+    padding: 15px;
+}
+
+.asd {
+    width: 50%;
+    border: 1px solid red;
+    min-height: 390px;
+}
+
+/* Slider */
+
+.product_slider {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.product_slider-preview {
+    width: 10%;
+    background: transparent;
+}
+
+.product_slider-content {
+    width: 90%;
+    padding: 25px;
+}
+
+.product_slider-content-image {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    align-self: center;
+    cursor: zoom-in;
+    transition: all .3s;
+}
+
+.product_slider-preview--element, .product_slider-content-image, .product_slider-fullscreen--content-display-image {
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: contain !important;
+}
+
+.product_slider-preview--element {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    border-left: 3px solid transparent;
+    transition: all .3s;
+    cursor: zoom-in
+}
+
+.product_slider-preview div:first-child {
+    border-left-color: #83CC00;
+}
+
+.product_slider-btn-left, .product_slider-btn-right {
+    display: none;
+}
+
+.product_slider-btn-left button, .product_slider-btn-right button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+}
+
+.product_slider-btn-left svg, .product_slider-btn-right svg {
+    width: 32px;
+    height: 100%;
+}
+
+@media only screen and (max-width: 991px) {
+    .product_slider-fullscreen--content {
+        padding: 5px;
+    }
+    .product_slider-preview {
+        display: none;
+    }
+    .product_slider-btn-left, .product_slider-btn-right {
+        display: block;
+    }
+    .product_slider-content {
+        padding: 0;
+    }
+}
+
+/* Slider FullScreen */
+
+.product_slider-fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: #fff;
+    display: none;
+    overflow: hidden;
+}
+
+.product_slider-fullscreen--heading {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding: 15px;
+}
+
+.product_slider-fullscreen--heading h1 {
+    position: relative;
+    top: 3px;
+    cursor: default;
+    font-size: 1.2em;
+}
+
+#product_slider-fullscreen-close_btn {
+    position: relative;
+    top: 3px;
+    width: 20px;
+    border: none;
+    background-color: transparent;
+}
+
+.product_slider-fullscreen--content {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+.product_slider-fullscreen--content-left_btn, .product_slider-fullscreen--content-right_btn {
+    width: 8%;
+}
+
+@media only screen and (max-width: 600px) {
+    .product_slider-fullscreen--content {
+        padding: 5px;
+    }
+}
+
+.product_slider-fullscreen--content-display {
+    width: 92%;
+    padding: 20px;
+}
+
+.product_slider-fullscreen--content-display-image {
+    width: 100%;
+    height: 100%;
+    transition: all .3s;
+}
+
+.product_slider-fullscreen--content button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    outline: none;
+}
+
+.product_slider-fullscreen--content button:hover {
+    background: #f9f9f9;
+}
+
+.product_slider-fullscreen--content button svg {
+    width: 32px !important;
+    height: 100%;
+}
+
+.product_slider-fullscreen--preview {
+    display: flex;
+    position: relative;
+    top: -30px;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100px;
+}
+
+.product_slider-fullscreen--preview--element {
+    display: flex;
+    width: 65px;
+    height: 65px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    cursor: pointer;
+}
+
+.product_slider-fullscreen--preview--element div {
+    width: 100%;
+    height: 100%;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position-x: 50% !important;
+    background-position-y: 50% !important;
+}

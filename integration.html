@@ -1,0 +1,378 @@
+<style>
+/* Slider */
+.product_slider {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.product_slider-preview {
+    width: 10%;
+    background: transparent;
+}
+
+.product_slider-content {
+    width: 90%;
+    padding: 25px;
+}
+
+.product_slider-content-image {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    align-self: center;
+    cursor: zoom-in;
+    transition: all .3s;
+}
+
+.product_slider-preview--element, .product_slider-content-image, .product_slider-fullscreen--content-display-image {
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: contain !important;
+}
+
+.product_slider-preview--element {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    border-left: 3px solid transparent;
+    transition: all .3s;
+    cursor: zoom-in
+}
+
+.product_slider-preview div:first-child {
+    border-left-color: #83CC00;
+}
+
+.product_slider-btn-left, .product_slider-btn-right {
+    display: none;
+}
+
+.product_slider-btn-left button, .product_slider-btn-right button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+}
+
+.product_slider-btn-left svg, .product_slider-btn-right svg {
+    width: 32px;
+    height: 100%;
+}
+
+@media only screen and (max-width: 991px) {
+    .product_slider-fullscreen--content {
+        padding: 5px;
+    }
+    .product_slider-preview {
+        display: none;
+    }
+    .product_slider-btn-left, .product_slider-btn-right {
+        display: block;
+    }
+    .product_slider-content {
+        padding: 0;
+    }
+}
+
+/* Slider FullScreen */
+
+.product_slider-fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: #fff;
+    display: none;
+    overflow: hidden;
+}
+
+.product_slider-fullscreen--heading {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding: 15px;
+}
+
+.product_slider-fullscreen--heading h1 {
+    position: relative;
+    top: 3px;
+    cursor: default;
+    font-size: 1.2em;
+}
+
+#product_slider-fullscreen-close_btn {
+    position: relative;
+    top: 3px;
+    width: 20px;
+    border: none;
+    background-color: transparent;
+}
+
+.product_slider-fullscreen--content {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+.product_slider-fullscreen--content-left_btn, .product_slider-fullscreen--content-right_btn {
+    width: 8%;
+}
+
+@media only screen and (max-width: 600px) {
+    .product_slider-fullscreen--content {
+        padding: 5px;
+    }
+}
+
+.product_slider-fullscreen--content-display {
+    width: 92%;
+    padding: 20px;
+}
+
+.product_slider-fullscreen--content-display-image {
+    width: 100%;
+    height: 100%;
+    transition: all .3s;
+}
+
+.product_slider-fullscreen--content button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    outline: none;
+}
+
+.product_slider-fullscreen--content button:hover {
+    background: #f9f9f9;
+}
+
+.product_slider-fullscreen--content button svg {
+    width: 32px !important;
+    height: 100%;
+}
+
+.product_slider-fullscreen--preview {
+    display: flex;
+    position: relative;
+    top: -30px;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100px;
+}
+
+.product_slider-fullscreen--preview--element {
+    display: flex;
+    width: 65px;
+    height: 65px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    cursor: pointer;
+}
+
+.product_slider-fullscreen--preview--element div {
+    width: 100%;
+    height: 100%;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position-x: 50% !important;
+    background-position-y: 50% !important;
+}
+</style>
+<div class="product_slider-fullscreen">
+    <div class="product_slider-fullscreen--heading">
+        <div class="product_slider-fullscreen--heading-text">
+            <h1>Lorem ipsum dolor sit amet.</h1>
+        </div>
+        <div class="product_slider-fullscreen--heading-btn">
+            <button type="submit" id="product_slider-fullscreen-close_btn"><?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title/><g id="cross"><line class="cls-1" x1="7" x2="25" y1="7" y2="25"/><line class="cls-1" x1="7" x2="25" y1="25" y2="7"/></g></svg></button>
+        </div>
+    </div>
+    <div class="product_slider-fullscreen--content">
+        <div class="product_slider-fullscreen--content-left_btn">
+            <button type="submit" id="product_slider-fullscreen--content-left_btn"><?xml version="1.0"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><polygon points="352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256 "/></svg></button>
+        </div>
+        <div class="product_slider-fullscreen--content-display">
+            <div class="product_slider-fullscreen--content-display-image" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/22/61729a3868a84a09993d9a22_merinoscrystal1021green_640.jpeg');"></div>
+        </div>
+        <div class="product_slider-fullscreen--content-right_btn">
+            <button type="submit" id="product_slider-fullscreen--content-right_btn"><?xml version="1.0"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><polygon points="160,115.4 180.7,96 352,256 180.7,416 160,396.7 310.5,256 "/></svg></button>
+        </div>
+    </div>
+    <div class="product_slider-fullscreen--preview">
+        <div class="product_slider-fullscreen--preview--element">
+            <div id="product_slider-fullscreen--slide_1" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/22/61729a3868a84a09993d9a22_merinoscrystal1021green_640.jpeg');"></div>
+        </div>
+        <div class="product_slider-fullscreen--preview--element">
+            <div id="product_slider-fullscreen--slide_2" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/9b/61729a3868a84a09993d9c9b_merinoscrystal1021green_640.jpeg');"></div>
+        </div>
+        <div class="product_slider-fullscreen--preview--element">
+            <div id="product_slider-fullscreen--slide_3" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/bc/61729a3868a84a09993d99bc_merinoscrystal1021green_640.jpeg');"></div>
+        </div>
+        <div class="product_slider-fullscreen--preview--element">
+            <div id="product_slider-fullscreen--slide_4" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/bf/61729a3868a84a09993d99bf_merinoscrystal1021green_640.jpeg');"></div>
+        </div>
+        <div class="product_slider-fullscreen--preview--element">
+            <div id="product_slider-fullscreen--slide_5" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/c3/61729a3868a84a09993d99c3_merinoscrystal1021green_640.jpeg');"></div>
+        </div>
+    </div>
+</div>
+<div class="product_slider">
+    <div class="product_slider-btn-left">
+        <button type="submit" id="product_slider-btn-left"><?xml version="1.0"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><polygon points="352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256 "/></svg></button>
+    </div>
+    <div class="product_slider-preview">
+        <div class="product_slider-preview--element" id="product_slider-slide_1" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/22/61729a3868a84a09993d9a22_merinoscrystal1021green_640.jpeg');"></div>
+        <div class="product_slider-preview--element" id="product_slider-slide_2" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/9b/61729a3868a84a09993d9c9b_merinoscrystal1021green_640.jpeg');"></div>
+        <div class="product_slider-preview--element" id="product_slider-slide_3" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/bc/61729a3868a84a09993d99bc_merinoscrystal1021green_640.jpeg');"></div>
+        <div class="product_slider-preview--element" id="product_slider-slide_4" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/bf/61729a3868a84a09993d99bf_merinoscrystal1021green_640.jpeg');"></div>
+        <div class="product_slider-preview--element" id="product_slider-slide_5" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/c3/61729a3868a84a09993d99c3_merinoscrystal1021green_640.jpeg');"></div>
+    </div>
+    <div class="product_slider-content">
+        <div class="product_slider-content-image" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/22/61729a3868a84a09993d9a22_merinoscrystal1021green_640.jpeg');"></div>
+    </div>
+    <div class="product_slider-btn-right">
+        <button type="submit" id="product_slider-btn-right"><?xml version="1.0"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><polygon points="160,115.4 180.7,96 352,256 180.7,416 160,396.7 310.5,256 "/></svg></button>
+    </div>
+</div>
+
+<script>
+    const activeSlide = document.querySelector(".product_slider-content-image");
+const prevSlides = document.querySelectorAll('.product_slider-preview--element');
+const slideBtnLeft = document.querySelector('#product_slider-btn-left');
+const slideBtnRight = document.querySelector('#product_slider-btn-right');
+
+const fullScreenSlider = document.querySelector('.product_slider-fullscreen');
+const closeFullScreenSlider = document.querySelector('#product_slider-fullscreen-close_btn');
+const fullScreenActiveSlide = document.querySelector('.product_slider-fullscreen--content-display-image');
+const fullScreenPreviewSlides = document.querySelectorAll('.product_slider-fullscreen--preview--element');
+const fullScreenLeftBtn = document.querySelector('.product_slider-fullscreen--content-left_btn');
+const fullScreenRightBtn = document.querySelector('.product_slider-fullscreen--content-right_btn');
+
+function clearHovers(prevSlides, color) {
+    prevSlides.forEach((elem) => {
+        elem.style.borderColor = color;
+    });
+}
+
+function activateSlide(slide) {
+    if (activeSlide.style.background === slide.style.background)
+        return 0;
+    clearHovers(prevSlides, 'transparent');
+    slide.style.borderColor = '#83CC00';
+    activeSlide.style.opacity = '0';
+    setTimeout(() => { activeSlide.style.background = slide.style.background; }, 200);
+    setTimeout(() => { activeSlide.style.opacity = '1'; }, 400);
+}
+
+function getSlideNumber(slideElement) {
+    let slideNum = 0;
+    for (let i = 0; i < prevSlides.length; i++) {
+        if (slideElement.style.background === prevSlides[i].style.background)
+            break;
+        slideNum++;
+    }
+    return slideNum;
+}
+
+function zoomSlider(slideElement) {
+    clearHovers(fullScreenPreviewSlides, '#f9f9f9');
+    fullScreenSlider.style.display = 'block';
+    fullScreenActiveSlide.style.background = slideElement.style.background;
+    const slideNum = getSlideNumber(slideElement);
+    fullScreenPreviewSlides[slideNum].style.borderColor = '#83CC00';
+}
+
+function changeFullScreenSlide(slideElement, slideNum) {
+    clearHovers(fullScreenPreviewSlides, '#f9f9f9');
+    slideElement.style.borderColor = '#83CC00';
+    fullScreenActiveSlide.style.opacity = '0';
+    setTimeout(() => { fullScreenActiveSlide.style.background = prevSlides[slideNum].style.background; }, 200);
+    setTimeout(() => { fullScreenActiveSlide.style.opacity = '1'; }, 400);
+}
+
+activeSlide.addEventListener('click', () => {
+    zoomSlider(activeSlide);
+});
+
+prevSlides.forEach((slideElement) => {
+    slideElement.addEventListener('mouseover', () => {
+        activateSlide(slideElement);
+    });
+    slideElement.addEventListener('click', () => {
+        zoomSlider(slideElement);
+    });
+});
+
+slideBtnLeft.addEventListener('click', (event) => {
+    event.preventDefault();
+    const slidersCount = prevSlides.length - 1;
+    let num = getSlideNumber(activeSlide);
+    if (num === 0)
+        num = slidersCount;
+    else
+        num--;
+    activeSlide.style.opacity = '0';
+    setTimeout(() => { activeSlide.style.background = prevSlides[num].style.background; }, 200);
+    setTimeout(() => { activeSlide.style.opacity = '1'; }, 400);
+});
+
+slideBtnRight.addEventListener('click', (event) => {
+    event.preventDefault();
+    const slidersCount = prevSlides.length - 1;
+    let num = getSlideNumber(activeSlide);
+    if (num === slidersCount)
+        num = 0;
+    else
+        num++;
+    activeSlide.style.opacity = '0';
+    setTimeout(() => { activeSlide.style.background = prevSlides[num].style.background; }, 200);
+    setTimeout(() => { activeSlide.style.opacity = '1'; }, 400);
+});
+
+
+fullScreenPreviewSlides.forEach((slideElement, index) => {
+    slideElement.addEventListener('click', () => {
+        changeFullScreenSlide(slideElement, index);
+    });
+});
+
+fullScreenLeftBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    const slidersCount = prevSlides.length - 1;
+    let num = getSlideNumber(fullScreenActiveSlide);
+    if (num === 0)
+        num = slidersCount;
+    else
+        num--;
+    changeFullScreenSlide(fullScreenPreviewSlides[num], num);
+});
+
+fullScreenRightBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    const slidersCount = prevSlides.length - 1;
+    let num = getSlideNumber(fullScreenActiveSlide);
+    if (num === slidersCount)
+        num = 0;
+    else
+        num++;
+    changeFullScreenSlide(fullScreenPreviewSlides[num], num);
+});
+
+closeFullScreenSlider.addEventListener('click', (event) => {
+    event.preventDefault();
+    fullScreenSlider.style.display = 'none';
+});
+
+activateSlide(prevSlides[0]);
+</script>
