@@ -1,6 +1,5 @@
 <style>
-    /* Slider */
-
+/* Slider */
 .product_slider {
     position: relative;
     display: flex;
@@ -10,8 +9,47 @@
 }
 
 .product_slider-preview {
+    position: relative;
     width: 10%;
+    height: 350px;
+    overflow: hidden;
     background: transparent;
+}
+
+.product_slider-preview-slides {
+    position: relative;
+    top: 0;
+    transition: all .3s;
+}
+
+.product_slider-preview-prev_btn {
+    position: absolute;
+    top: 5px;
+    left: 12px;
+    z-index: 100;
+}
+
+.product_slider-preview-next_btn {
+    position: absolute;
+    bottom: 5px;
+    left: 12px;
+    z-index: 100;
+}
+
+.product_slider-preview-next_btn button, .product_slider-preview-prev_btn button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
+    transition: all .3s;
+    display: none;
+}
+
+.product_slider-preview-next_btn svg, .product_slider-preview-prev_btn svg {
+    width: 50%;
+    height: 50%;
 }
 
 .product_slider-content {
@@ -81,7 +119,7 @@
     display: flex;
     justify-content: space-between;
     background-color: #f9f9f9;
-    padding: 15px;
+    padding: 7px;
 }
 
 .product_slider-fullscreen--heading h1 {
@@ -227,8 +265,6 @@
     border-radius: 50%;
 }
 
-
-
 @media only screen and (max-width: 991px) {
     .product_slider {
         min-height: 300px;
@@ -298,32 +334,42 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="product_slider-fullscreen--preview--element">
-                        <div id="product_slider-fullscreen--slide_1" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/22/61729a3868a84a09993d9a22_merinoscrystal1021green_640.jpeg');"></div>
+                        <div style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/22/61729a3868a84a09993d9a22_merinoscrystal1021green_640.jpeg');"></div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="product_slider-fullscreen--preview--element">
-                        <div id="product_slider-fullscreen--slide_2" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/9b/61729a3868a84a09993d9c9b_merinoscrystal1021green_640.jpeg');"></div>
+                        <div style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/9b/61729a3868a84a09993d9c9b_merinoscrystal1021green_640.jpeg');"></div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="product_slider-fullscreen--preview--element">
-                        <div id="product_slider-fullscreen--slide_3" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/bc/61729a3868a84a09993d99bc_merinoscrystal1021green_640.jpeg');"></div>
+                        <div style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/bc/61729a3868a84a09993d99bc_merinoscrystal1021green_640.jpeg');"></div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="product_slider-fullscreen--preview--element">
-                        <div id="product_slider-fullscreen--slide_4" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/bf/61729a3868a84a09993d99bf_merinoscrystal1021green_640.jpeg');"></div>
+                        <div style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/bf/61729a3868a84a09993d99bf_merinoscrystal1021green_640.jpeg');"></div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="product_slider-fullscreen--preview--element">
-                        <div id="product_slider-fullscreen--slide_5" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/c3/61729a3868a84a09993d99c3_merinoscrystal1021green_640.jpeg');"></div>
+                        <div style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/c3/61729a3868a84a09993d99c3_merinoscrystal1021green_640.jpeg');"></div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="product_slider-fullscreen--preview--element">
-                        <div id="product_slider-fullscreen--slide_6" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/0b/61370801e392d0908d68c70b_merinoscrystalc014multicolor_640.jpeg');"></div>
+                        <div style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/0b/61370801e392d0908d68c70b_merinoscrystalc014multicolor_640.jpeg');"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="product_slider-fullscreen--preview--element">
+                        <div style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/fa/613707f1e392d0908d6886fa_merinoscrystalc045blue_640.jpeg');"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="product_slider-fullscreen--preview--element">
+                        <div style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/fc/613707f1e392d0908d6886fc_merinoscrystalc045blue_640.jpeg');"></div>
                     </div>
                 </div>
             </div>
@@ -335,12 +381,22 @@
         <button type="submit" id="product_slider-btn-left"><?xml version="1.0"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><polygon points="352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256 "/></svg></button>
     </div>
     <div class="product_slider-preview">
-        <div class="product_slider-preview--element" id="product_slider-slide_1" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/22/61729a3868a84a09993d9a22_merinoscrystal1021green_640.jpeg');"></div>
-        <div class="product_slider-preview--element" id="product_slider-slide_2" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/9b/61729a3868a84a09993d9c9b_merinoscrystal1021green_640.jpeg');"></div>
-        <div class="product_slider-preview--element" id="product_slider-slide_3" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/bc/61729a3868a84a09993d99bc_merinoscrystal1021green_640.jpeg');"></div>
-        <div class="product_slider-preview--element" id="product_slider-slide_4" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/bf/61729a3868a84a09993d99bf_merinoscrystal1021green_640.jpeg');"></div>
-        <div class="product_slider-preview--element" id="product_slider-slide_5" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/c3/61729a3868a84a09993d99c3_merinoscrystal1021green_640.jpeg');"></div>
-        <div class="product_slider-preview--element" id="product_slider-slide_6" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/0b/61370801e392d0908d68c70b_merinoscrystalc014multicolor_640.jpeg');"></div>
+        <div class="product_slider-preview-prev_btn">
+            <button type="submit" id="product_slider-preview-prev_btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"/></svg></button>
+        </div>
+        <div class="product_slider-preview-slides">
+            <div class="product_slider-preview--element" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/22/61729a3868a84a09993d9a22_merinoscrystal1021green_640.jpeg');"></div>
+            <div class="product_slider-preview--element" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/9b/61729a3868a84a09993d9c9b_merinoscrystal1021green_640.jpeg');"></div>
+            <div class="product_slider-preview--element" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/bc/61729a3868a84a09993d99bc_merinoscrystal1021green_640.jpeg');"></div>
+            <div class="product_slider-preview--element" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/bf/61729a3868a84a09993d99bf_merinoscrystal1021green_640.jpeg');"></div>
+            <div class="product_slider-preview--element" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/c3/61729a3868a84a09993d99c3_merinoscrystal1021green_640.jpeg');"></div>
+            <div class="product_slider-preview--element" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/0b/61370801e392d0908d68c70b_merinoscrystalc014multicolor_640.jpeg');"></div>
+            <div class="product_slider-preview--element" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/fa/613707f1e392d0908d6886fa_merinoscrystalc045blue_640.jpeg');"></div>
+            <div class="product_slider-preview--element" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/fc/613707f1e392d0908d6886fc_merinoscrystalc045blue_640.jpeg');"></div>
+        </div>
+        <div class="product_slider-preview-next_btn">
+            <button type="submit" id="product_slider-preview-next_btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z"/></svg></button>
+        </div>
     </div>
     <div class="product_slider-content">
         <div class="product_slider-content-image" style="background: url('https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/22/61729a3868a84a09993d9a22_merinoscrystal1021green_640.jpeg');"></div>
@@ -351,10 +407,12 @@
 </div>
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 <script>
-    const activeSlide = document.querySelector(".product_slider-content-image");
+const activeSlide = document.querySelector(".product_slider-content-image");
 const prevSlides = document.querySelectorAll('.product_slider-preview--element');
 const slideBtnLeft = document.querySelector('#product_slider-btn-left');
 const slideBtnRight = document.querySelector('#product_slider-btn-right');
+const previewNavigationBtnTop = document.querySelector('#product_slider-preview-prev_btn');
+const previewNavigationBtnBottom = document.querySelector('#product_slider-preview-next_btn');
 
 const fullScreenSlider = document.querySelector('.product_slider-fullscreen');
 const closeFullScreenSlider = document.querySelector('#product_slider-fullscreen-close_btn');
@@ -367,7 +425,7 @@ function getSwiperSlidesPerView() {
     if (window.innerWidth < 991)
          return 5;
     else
-        return 15;
+        return 17;
 }
 
 const swiper = new Swiper(".my_swiper", {
@@ -400,7 +458,7 @@ function activateSlide(slide) {
 function getSlideNumber(slideElement) {
     let slideNum = 0;
     for (let i = 0; i < prevSlides.length; i++) {
-        if (slideElement.style.background === prevSlides[i].style.background)
+        if (slideElement.style.background === prevSlides[i].style.background || slideElement.style.backgroundImage === prevSlides[i].style.background)
             break;
         slideNum++;
     }
@@ -414,14 +472,6 @@ function zoomSlider(slideElement) {
     fullScreenActiveSlide.style.background = slideElement.style.background;
     const slideNum = getSlideNumber(slideElement);
     fullScreenPreviewSlides[slideNum].style.borderColor = '#83CC00';
-}
-
-function changeFullScreenSlide(slideElement, slideNum) {
-    clearHovers(fullScreenPreviewSlides, '#f9f9f9');
-    slideElement.style.borderColor = '#83CC00';
-    fullScreenActiveSlide.style.opacity = '0';
-    setTimeout(() => { fullScreenActiveSlide.style.background = prevSlides[slideNum].style.background; }, 200);
-    setTimeout(() => { fullScreenActiveSlide.style.opacity = '1'; }, 400);
 }
 
 function mainSliderMoveLeft() {
@@ -449,6 +499,13 @@ function mainSliderMoveRight() {
 }
 
 /* fullScreen Functions Start */
+function changeFullScreenSlide(slideElement, slideNum) {
+    clearHovers(fullScreenPreviewSlides, '#f9f9f9');
+    slideElement.style.borderColor = '#83CC00';
+    fullScreenActiveSlide.style.opacity = '0';
+    setTimeout(() => { fullScreenActiveSlide.style.background = prevSlides[slideNum].style.background; }, 200);
+    setTimeout(() => { fullScreenActiveSlide.style.opacity = '1'; }, 400);
+}
 
 function fullScreenMoveRight() {
     const slidersCount = prevSlides.length - 1;
@@ -497,6 +554,46 @@ slideBtnRight.addEventListener('click', (event) => {
     mainSliderMoveRight();
 });
 
+let slidePreviewPosition = 0;
+let allPositions = prevSlides.length - 5;
+
+if (prevSlides.length > 5) {
+    previewNavigationBtnBottom.style.display = 'block';
+}
+
+previewNavigationBtnBottom.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (slidePreviewPosition === allPositions)
+        return 0;
+    else {
+        previewNavigationBtnTop.style.display = 'block';
+    }
+    if (slidePreviewPosition + 1 === allPositions) {
+        previewNavigationBtnTop.style.display = 'block';
+        previewNavigationBtnBottom.style.display = 'none';
+    }
+    slidePreviewPosition++;
+    const sliderPreviewBLock = document.querySelector('.product_slider-preview-slides');
+    sliderPreviewBLock.style.top = `${-1 * 80 * slidePreviewPosition}px`;
+});
+
+previewNavigationBtnTop.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (slidePreviewPosition === 0)
+        return 0;
+    else {
+        previewNavigationBtnBottom.style.display = 'block';
+    }
+    if (slidePreviewPosition - 1 === 0) {
+        previewNavigationBtnTop.style.display = 'none';
+        previewNavigationBtnBottom.style.display = 'block';
+    }
+    slidePreviewPosition--;
+    const sliderPreviewBLock = document.querySelector('.product_slider-preview-slides');
+    sliderPreviewBLock.style.top = `${-1 * 80 * slidePreviewPosition}px`;
+});
+
+
 let activeSlideXPosition = 0;
 
 activeSlide.addEventListener('touchstart', (event) => {
@@ -538,16 +635,27 @@ fullScreenActiveSlide.addEventListener('click', () => {
 fullScreenActiveSlide.addEventListener('mousemove', (event) => {
     if (zoomIndex)
         return 0;
-
-    const fullScreenPreview = document.querySelector('.product_slider-fullscreen--preview');
+    
+    const fullScreenPreviewBlock = document.querySelector('.product_slider-fullscreen--preview');
     const windowCenterX = window.innerWidth / 2;
-    const windowCenterY = fullScreenPreview.offsetHeight + (fullScreenActiveSlide.offsetHeight / 2) - 20;
+    const windowCenterY = fullScreenPreviewBlock.offsetHeight + (fullScreenActiveSlide.offsetHeight / 2) - 20;
     const clientX = event.clientX;
     const clientY = event.clientY;
 
-    const positionX = (windowCenterX - clientX) * 2;
-    const positionY = (windowCenterY - clientY) * 2;
+    let positionX = (windowCenterX - clientX) * 2;
+    let positionY = (windowCenterY - clientY) * 2;
     fullScreenActiveSlide.style.transition = 'none';
+    if (positionX > 300) {
+        positionX = 300; 
+    }else if (positionX < -300) {
+        positionX = -300;
+    }
+    if (positionY > 100) {
+        positionY = 100;
+    }else if (positionY < -400) {
+        positionY = -400;
+    }
+
     fullScreenActiveSlide.style.setProperty('background-position-x', `${positionX}px`, 'important');
     fullScreenActiveSlide.style.setProperty('background-position-y', `${positionY}px`, 'important');
 });
@@ -594,5 +702,6 @@ fullScreenActiveSlide.addEventListener('touchend', (event) => {
         return 1;
     }
 });
+
 activateSlide(prevSlides[0]);
 </script>
