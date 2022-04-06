@@ -1,5 +1,6 @@
 <style>
 /* Slider */
+
 .product_slider {
     position: relative;
     display: flex;
@@ -45,11 +46,14 @@
     box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
     transition: all .3s;
     display: none;
+    cursor: pointer;
 }
 
 .product_slider-preview-next_btn svg, .product_slider-preview-prev_btn svg {
     width: 50%;
     height: 50%;
+    position: relative;
+    top: 2px;
 }
 
 .product_slider-content {
@@ -94,6 +98,7 @@
     height: 100%;
     border: none;
     background: transparent;
+    cursor: pointer;
 }
 
 .product_slider-btn-left svg, .product_slider-btn-right svg {
@@ -126,13 +131,16 @@
     position: relative;
     top: 3px;
     cursor: default;
-    font-size: 1.5em;
+    font-size: 2em;
+    margin-left: 20px;
+    font-weight: bold;
 }
 
 #product_slider-fullscreen-close_btn {
     position: relative;
-    top: 3px;
-    width: 25px;
+    top: 5px;
+    margin-right: 10px;
+    width: 35px;
     border: none;
     background-color: transparent;
 }
@@ -150,6 +158,8 @@
     background: transparent;
     border: none;
     border-bottom: 2px solid #83CC00;
+    font-size: 1.5em;
+    cursor: pointer;
 }
 
 .product_slider-fullscreen--content {
@@ -190,6 +200,7 @@
     border-radius: 4px;
     background: transparent;
     outline: none;
+    cursor: pointer;
 }
 
 .product_slider-fullscreen--content button:hover {
@@ -264,6 +275,8 @@
     box-shadow: 0 5px 20px 0 rgb(0 0 0 / 20%), inset 0 0 0 1px rgb(0 0 0 / 10%);
     border-radius: 50%;
 }
+
+
 
 @media only screen and (max-width: 991px) {
     .product_slider {
@@ -619,7 +632,7 @@ fullScreenActiveSlide.addEventListener('click', () => {
         return 0;
     if (zoomIndex) {
         fullScreenActiveSlide.style.cursor = 'zoom-out';
-        fullScreenActiveSlide.style.setProperty('background-size', '80%', 'important');
+        fullScreenActiveSlide.style.setProperty('background-size', '120%', 'important');
         zoomIndex = 0;
     }
     else {
@@ -652,8 +665,6 @@ fullScreenActiveSlide.addEventListener('mousemove', (event) => {
     }
     if (positionY > 100) {
         positionY = 100;
-    }else if (positionY < -400) {
-        positionY = -400;
     }
 
     fullScreenActiveSlide.style.setProperty('background-position-x', `${positionX}px`, 'important');
