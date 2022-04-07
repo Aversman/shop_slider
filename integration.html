@@ -666,7 +666,6 @@ fullScreenActiveSlide.addEventListener('mousemove', (event) => {
     if (positionY > 100) {
         positionY = 100;
     }
-
     fullScreenActiveSlide.style.setProperty('background-position-x', `${positionX}px`, 'important');
     fullScreenActiveSlide.style.setProperty('background-position-y', `${positionY}px`, 'important');
 });
@@ -702,15 +701,21 @@ fullScreenActiveSlide.addEventListener('touchstart', (event) => {
 });
 
 fullScreenActiveSlide.addEventListener('touchend', (event) => {
-    if (fullScreenActiveSlideXPosition > event.changedTouches[0].clientX) {
-        fullScreenMoveRight();
-        return 1;
-    }else if (fullScreenActiveSlideXPosition === event.changedTouches[0].clientX) {
-        return 0;
-    }
-    else {
-        fullScreenMoveLeft();
-        return 1;
+    const currentPosition = event.changedTouches[0].clientX;
+    if (event.changedTouches.length === 1 && Math.abs(fullScreenActiveSlideXPosition - currentPosition) > 120) {
+        if (fullScreenActiveSlideXPosition > currentPosition) {
+            fullScreenMoveRight();
+            fullScreenActiveSlideXPosition = 0;
+            return 1;
+        }else if (fullScreenActiveSlideXPosition === currentPosition) {
+            fullScreenActiveSlideXPosition = 0;
+            return 0;
+        }
+        else {
+            fullScreenMoveLeft();
+            fullScreenActiveSlideXPosition = 0;
+            return 1;
+        }
     }
 });
 
