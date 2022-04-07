@@ -614,15 +614,18 @@ activeSlide.addEventListener('touchstart', (event) => {
 });
 
 activeSlide.addEventListener('touchend', (event) => {
-    if (activeSlideXPosition > event.changedTouches[0].clientX) {
-        mainSliderMoveRight();
-        return 1;
-    }else if (activeSlideXPosition === event.changedTouches[0].clientX) {
-        return 0;
-    }
-    else {
-        mainSliderMoveLeft();
-        return 1;
+    const currentPosition = event.changedTouches[0].clientX;
+    if (Math.abs(activeSlideXPosition - currentPosition) > 90) {
+        if (activeSlideXPosition > currentPosition) {
+            mainSliderMoveRight();
+            return 1;
+        }else if (activeSlideXPosition === currentPosition) {
+            return 0;
+        }
+        else {
+            mainSliderMoveLeft();
+            return 1;
+        }
     }
 });
 
@@ -702,7 +705,8 @@ fullScreenActiveSlide.addEventListener('touchstart', (event) => {
 
 fullScreenActiveSlide.addEventListener('touchend', (event) => {
     const currentPosition = event.changedTouches[0].clientX;
-    if (event.changedTouches.length === 1 && Math.abs(fullScreenActiveSlideXPosition - currentPosition) > 120) {
+    console.log(event.changedTouches);
+    if (Math.abs(fullScreenActiveSlideXPosition - currentPosition) > 90) {
         if (fullScreenActiveSlideXPosition > currentPosition) {
             fullScreenMoveRight();
             fullScreenActiveSlideXPosition = 0;
