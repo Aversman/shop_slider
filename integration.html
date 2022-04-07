@@ -705,7 +705,6 @@ fullScreenActiveSlide.addEventListener('touchstart', (event) => {
 
 fullScreenActiveSlide.addEventListener('touchend', (event) => {
     const currentPosition = event.changedTouches[0].clientX;
-    console.log(event.changedTouches);
     if (Math.abs(fullScreenActiveSlideXPosition - currentPosition) > 90) {
         if (fullScreenActiveSlideXPosition > currentPosition) {
             fullScreenMoveRight();
