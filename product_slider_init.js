@@ -6,13 +6,7 @@ const psContentActive = document.querySelector('.product_slider-content-image');
 const productSliderConfig = {
     title: 'My slider',
     slides: [
-        'https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/22/61729a3868a84a09993d9a22_merinoscrystal1021green_640.jpeg',
-        'https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/9b/61729a3868a84a09993d9c9b_merinoscrystal1021green_640.jpeg',
-        'https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/bc/61729a3868a84a09993d99bc_merinoscrystal1021green_640.jpeg',
-        'https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/bf/61729a3868a84a09993d99bf_merinoscrystal1021green_640.jpeg',
-        'https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/c3/61729a3868a84a09993d99c3_merinoscrystal1021green_640.jpeg',
-        'https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/c8/61729a3868a84a09993d99c8_merinoscrystal1021green_640.jpeg',
-        'https://xn--b1apmj9c.xn--p1ai/content/img/thumbs/cc/61729a3868a84a09993d99cc_merinoscrystal1021green_640.jpeg'
+        // image url's
     ]
 }
 
