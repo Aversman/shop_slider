@@ -24,6 +24,12 @@
     min-height: 390px;
 }
 
+@media only screen and (max-width: 991px) {
+    .asd {
+        width: 100%;
+    }
+}
+
 /* Slider */
 
 .product_slider {
@@ -35,8 +41,50 @@
 }
 
 .product_slider-preview {
+    position: relative;
     width: 10%;
+    height: 350px;
+    overflow: hidden;
     background: transparent;
+}
+
+.product_slider-preview-slides {
+    position: relative;
+    top: 0;
+    transition: all .3s;
+}
+
+.product_slider-preview-prev_btn {
+    position: absolute;
+    top: 5px;
+    left: 12px;
+    z-index: 100;
+}
+
+.product_slider-preview-next_btn {
+    position: absolute;
+    bottom: 5px;
+    left: 12px;
+    z-index: 100;
+}
+
+.product_slider-preview-next_btn button, .product_slider-preview-prev_btn button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
+    transition: all .3s;
+    display: none;
+    cursor: pointer;
+}
+
+.product_slider-preview-next_btn svg, .product_slider-preview-prev_btn svg {
+    width: 50%;
+    height: 50%;
+    position: relative;
+    top: 2px;
 }
 
 .product_slider-content {
@@ -81,26 +129,12 @@
     height: 100%;
     border: none;
     background: transparent;
+    cursor: pointer;
 }
 
 .product_slider-btn-left svg, .product_slider-btn-right svg {
     width: 32px;
     height: 100%;
-}
-
-@media only screen and (max-width: 991px) {
-    .product_slider-fullscreen--content {
-        padding: 5px;
-    }
-    .product_slider-preview {
-        display: none;
-    }
-    .product_slider-btn-left, .product_slider-btn-right {
-        display: block;
-    }
-    .product_slider-content {
-        padding: 0;
-    }
 }
 
 /* Slider FullScreen */
@@ -121,22 +155,42 @@
     display: flex;
     justify-content: space-between;
     background-color: #f9f9f9;
-    padding: 15px;
+    padding: 7px;
 }
 
 .product_slider-fullscreen--heading h1 {
     position: relative;
     top: 3px;
     cursor: default;
-    font-size: 1.2em;
+    font-size: 2em;
+    margin-left: 20px;
+    font-weight: bold;
 }
 
 #product_slider-fullscreen-close_btn {
     position: relative;
-    top: 3px;
-    width: 20px;
+    top: 5px;
+    margin-right: 10px;
+    width: 35px;
     border: none;
     background-color: transparent;
+}
+
+.product_slider-fullscreen--info {
+    width: 100%;
+    border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+.product_slider-fullscreen--info button {
+    color: #83CC00;
+    padding: 5px;
+    margin-top: 3px;
+    margin-left: 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #83CC00;
+    font-size: 1.5em;
+    cursor: pointer;
 }
 
 .product_slider-fullscreen--content {
@@ -160,11 +214,13 @@
 .product_slider-fullscreen--content-display {
     width: 92%;
     padding: 20px;
+    padding-bottom: 50px;
 }
 
 .product_slider-fullscreen--content-display-image {
     width: 100%;
     height: 100%;
+    cursor: zoom-in;
     transition: all .3s;
 }
 
@@ -175,6 +231,7 @@
     border-radius: 4px;
     background: transparent;
     outline: none;
+    cursor: pointer;
 }
 
 .product_slider-fullscreen--content button:hover {
@@ -187,12 +244,11 @@
 }
 
 .product_slider-fullscreen--preview {
-    display: flex;
-    position: relative;
-    top: -30px;
-    justify-content: flex-start;
+    position: fixed;
+    bottom: 0px;
     width: 100%;
-    height: 100px;
+    height: auto;
+    background: #fff;
 }
 
 .product_slider-fullscreen--preview--element {
@@ -200,6 +256,8 @@
     width: 65px;
     height: 65px;
     margin: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     padding: 5px;
     border-radius: 4px;
     border: 1px solid #eee;
@@ -213,4 +271,76 @@
     background-repeat: no-repeat !important;
     background-position-x: 50% !important;
     background-position-y: 50% !important;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.product_slider-fullscreen-preview-navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.product_slider-fullscreen-preview-prev_btn {
+    background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-left-256.png') center center no-repeat;
+    background-size: 20px;
+}
+
+.product_slider-fullscreen-preview-next_btn {
+    background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-right-512.png') center center no-repeat;
+    background-size: 20px;
+}
+
+.product_slider-fullscreen-preview-next_btn, .product_slider-fullscreen-preview-prev_btn {
+    position: relative;
+    top: 55px;
+    z-index: 999;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    box-shadow: 0 5px 20px 0 rgb(0 0 0 / 20%), inset 0 0 0 1px rgb(0 0 0 / 10%);
+    border-radius: 50%;
+}
+
+
+
+@media only screen and (max-width: 991px) {
+    .product_slider {
+        min-height: 300px;
+    }
+    .product_slider-fullscreen--content {
+        padding: 5px;
+    }
+    .product_slider-preview {
+        display: none;
+    }
+    .product_slider-btn-left, .product_slider-btn-right {
+        display: block;
+    }
+    .product_slider-content {
+        padding: 0;
+    }
+    .product_slider-fullscreen--content-right_btn, .product_slider-fullscreen--content-left_btn {
+        display: none;
+    }
+    .product_slider-fullscreen--content-display {
+        width: 100% !important;
+    }
+    .product_slider-fullscreen--heading-text h1 {
+        display: none;
+    }
+    .product_slider-fullscreen--heading {
+        position: relative;
+        z-index: 999;
+        background: transparent !important;
+    }
+    .product_slider-fullscreen--info {
+        position: absolute;
+        top: 17px;
+    }
 }
